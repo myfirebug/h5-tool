@@ -1,0 +1,38 @@
+.geek{
+  // 头部
+  &-header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:0 16px;
+    height: 60px;
+    background:#1d7ae4;
+    .left{
+      display: flex;
+      align-items: center;
+    }
+    .right{
+      display: flex;
+      align-items: center;
+    }
+    // 菜单
+    .nav{
+      margin:0;
+      a{
+        padding:0 10px;
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        color:rgba(255,255,255,1);
+        transition: all .25s ease 0s;
+        span{
+          padding-right: 5px;
+        }
+        &:hover{
+          background:#20a0ff;
+        }
+      }
+    }
+  }
+}

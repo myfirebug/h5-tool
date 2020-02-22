@@ -1,0 +1,19 @@
+// 表单模块
+.form-wrapper{
+  .ant-form-item{
+    display: flex;
+  }
+  .ant-form-item-control-wrapper{
+    flex:1;
+    padding-right: 10px;
+  }
+}
+.container{
+  min-height: 100%;
+}
+.api-form{
+  .ant-form-item-label{
+    width: 120px;
+  }
+}
+

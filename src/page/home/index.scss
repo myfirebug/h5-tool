@@ -1,0 +1,682 @@
+.main-content{
+  position: fixed;
+  left:10px;
+  right: 10px;
+  bottom:10px;
+  top:74px;
+  display: flex;
+  .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+    margin-right: 10px;
+    height: 100%;
+    background:#fff;
+  }
+  .animation-wrap{
+    width: 970px;
+    height: 675px;
+    position: relative;
+    background: url('../../assets/images/step_bg.png') no-repeat;
+    background-size: cover;
+    .label{
+      position: absolute;
+      padding: 3px 10px;
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      font-family: "Microsoft YaHei";
+      font-weight: bold;
+      background: #6882da;
+      border: solid 1px #6882da;
+      border-radius: 5px;
+      &:after{
+        content: "";
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        top: 19px;
+        left: calc(50% - 4px);
+        border-left: 1px solid #6882da;
+        border-bottom: 1px solid #6882da;
+        background: #6882da;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .right{
+    width: 21%;
+    height: 100%;
+  }
+  .title{
+    line-height: 18px;
+    text-align: left;
+    padding: 28px 20px 20px 28px;
+    font-size: 16px;
+    color: #222;
+    font-weight: bold;
+  }
+  .top{
+    height: 265px;
+    background:#fff;
+    .main-menu{
+      &-list{
+        display: flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        overflow: hidden;
+        margin:0 18px 0 28px;
+        padding-bottom:20px;
+        text-align: center;
+      }
+      &-item{
+        height: 50px;
+        width: calc(50% - 10px);
+        margin: 0 10px 10px 0;
+        line-height: 50px;
+        border:1px solid #ddd;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: all .25s ease 0s;
+        a{
+          display: block;
+          color:#333;
+        }
+        &:hover{
+          border-color:#1890ff;
+          a{
+            color:#1890ff;
+          }
+        }
+      }
+    }
+  }
+  .bottom{
+    margin-top:10px;
+    height: calc(100% - 275px);
+    background:#fff;
+    .list{
+      padding:0 28px;
+    }
+    .item{
+      margin-bottom:15px;
+      cursor: pointer;
+      &:hover{
+        color:#1890ff;
+      }
+    }
+  }
+}
+
+@keyframes animation-step0-data1 {
+  0% {
+    top: 310px;
+    left: 465px;
+  }
+  25% {
+    top: 302px;
+    left: 465px;
+  }
+  50% {
+    top: 310px;
+    left: 465px;
+  }
+  75% {
+    top: 302px;
+    left: 465px;
+  }
+  100% {
+    top: 310px;
+    left: 465px;
+  }
+}
+
+@keyframes animation-step0-data2 {
+  0% {
+    top: 315px;
+    left: 440px;
+    visibility: visible;
+  }
+  100% {
+    top: 265px;
+    left: 440px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step0-data3 {
+  0% {
+    top: 315px;
+    left: 495px;
+    visibility: visible;
+  }
+  100% {
+    top: 265px;
+    left: 495px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step0-data4 {
+  0% {
+    top: 365px;
+    left: 440px;
+    visibility: visible;
+  }
+  100% {
+    top: 315px;
+    left: 440px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step0-data5 {
+  0% {
+    top: 355px;
+    left: 495px;
+    visibility: visible;
+  }
+  100% {
+    top: 305px;
+    left: 495px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step1-data {
+  0% {
+    top: 542px;
+    left: 250px;
+    visibility: visible;
+  }
+  35% {
+    top: 470px;
+    left: 120px;
+  }
+  75% {
+    top: 394px;
+    left: 10px;
+  }
+  100% {
+    top: 356px;
+    left: 74px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step1-data3 {
+  0% {
+    top: 542px;
+    left: 250px;
+    visibility: visible;
+  }
+  35% {
+    top: 470px;
+    left: 120px;
+  }
+  75% {
+    top: 394px;
+    left: 10px;
+  }
+  100% {
+    top: 356px;
+    left: 74px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step1-data4 {
+  0% {
+    top: 542px;
+    left: 250px;
+    visibility: visible;
+  }
+  35% {
+    top: 470px;
+    left: 120px;
+  }
+  75% {
+    top: 394px;
+    left: 10px;
+  }
+  100% {
+    top: 356px;
+    left: 74px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step2-data0 {
+  0% {
+    top: 277px;
+    left: 80px;
+    visibility: visible;
+    opacity: 1;
+  }
+  25% {
+    top: 277px;
+    left: 80px;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes animation-step2-data5 {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes animation-step2-data {
+  0% {
+    top: 542px;
+    left: 250px;
+    visibility: visible;
+  }
+  35% {
+    top: 470px;
+    left: 120px;
+  }
+  75% {
+    top: 394px;
+    left: 10px;
+  }
+  100% {
+    top: 356px;
+    left: 74px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step2-data4 {
+  0% {
+    top: 535px;
+    left: 55px;
+    visibility: visible;
+  }
+  30% {
+    top: 490px;
+    left: 15px;
+  }
+  95% {
+    top: 385px;
+    left: 58px;
+  }
+  100% {
+    top: 370px;
+    left: 182px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step3-data {
+  0% {
+    top: 290px;
+    left: 178px;
+    visibility: visible;
+  }
+  100% {
+    top: 250px;
+    left: 252px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step3-data5 {
+  0% {
+    visibility: visible;
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+
+@keyframes animation-step4-data {
+  0% {
+    top: 186px;
+    left: 362px;
+    visibility: visible;
+  }
+  100% {
+    top: 146px;
+    left: 436px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step4-data0 {
+  0% {
+    top: 12px;
+    left: 410px;
+    visibility: visible;
+    opacity: 1;
+  }
+  50% {
+    top: 12px;
+    left: 410px;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes animation-step4-data5 {
+  0% {
+    top: 80px;
+    left: 470px;
+    visibility: visible;
+    opacity: 1;
+  }
+  15% {
+    top: 140px;
+    left: 530px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step5-data {
+  0% {
+    top: 144px;
+    left: 554px;
+    visibility: visible;
+  }
+  30% {
+    top: 170px;
+    left: 598px;
+  }
+  100% {
+    top: 198px;
+    left: 642px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step6-data {
+  0% {
+    top: 266px;
+    left: 748px;
+    visibility: visible;
+  }
+  100% {
+    top: 300px;
+    left: 806px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animation-step6-data2 {
+  0% {
+    top: 262px;
+    left: 768px;
+    visibility: visible;
+  }
+  100% {
+    top: 300px;
+    left: 830px;
+    visibility: hidden;
+  }
+}
+
+.step-data {
+  position: absolute;
+  visibility: hidden;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+  background: url('../../assets/images/step_data.png') no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.step-data-img2 {
+  visibility: visible;
+  left: 748px;
+  top:266px;
+  width: 100px;
+  height: 60px;
+  background-position: 0 -164px;
+}
+
+.step-data-img {
+  position: absolute;
+  visibility: hidden;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+}
+
+.step0-data1 {
+  position: absolute;
+  top: 310px;
+  left: 465px;
+  width: 96px;
+  height: 111px;
+  background: url("../../assets/images/step0_1.png") no-repeat;
+  animation-name: animation-step0-data1;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  visibility: visible;
+  animation-duration: 3s;
+}
+
+.step0-data2 {
+  animation-name: animation-step0-data2;
+}
+
+.step0-data3 {
+  animation-name: animation-step0-data3;
+}
+
+.step0-data4 {
+  animation-name: animation-step0-data4;
+}
+
+.step0-data5 {
+  animation-name: animation-step0-data5;
+}
+
+.step1-data1 {
+  animation-name: animation-step1-data;
+  animation-delay: 0s;
+  background-position: 0 -30px;
+}
+
+.step1-data2 {
+  animation-name: animation-step1-data;
+  animation-delay: 1s;
+  background-position: -30px -30px;
+}
+
+.step1-data3 {
+  animation-name: animation-step1-data3;
+  animation-delay: 2s;
+  background-position: -60px -30px;
+}
+
+.step1-data4 {
+  animation-name: animation-step1-data4;
+  animation-delay: 3s;
+  background-position: -90px -30px;
+}
+
+.step2-data1 {
+  animation-name: animation-step2-data;
+  animation-delay: 0s;
+  background-position: 0 -30px;
+}
+
+.step2-data11 {
+  animation-name: animation-step2-data0;
+  animation-delay: 0s;
+  background-position: 0 -90px;
+}
+
+.step2-data2 {
+  animation-name: animation-step2-data;
+  animation-delay: 1s;
+  background-position: -30px -30px;
+}
+
+.step2-data22 {
+  animation-name: animation-step2-data0;
+  animation-delay: 1s;
+  background-position: -30px -90px;
+}
+
+.step2-data3 {
+  animation-name: animation-step2-data;
+  animation-delay: 2s;
+  background-position: -60px -30px;
+}
+
+.step2-data33 {
+  animation-name: animation-step2-data0;
+  animation-delay: 2s;
+  background-position: -60px -90px;
+}
+
+.step2-data4 {
+  animation-name: animation-step2-data;
+  animation-delay: 3s;
+  background-position: -90px -30px;
+}
+
+.step2-data44 {
+  animation-name: animation-step2-data0;
+  animation-delay: 3s;
+  background-position: -90px -90px;
+}
+
+.step2-data5 {
+  animation-name: animation-step2-data5;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  background-position: 0 -160px;
+  top: 282px;
+  left: 90px;
+  width: 60px;
+  height: 60px;
+}
+
+.step3-data1 {
+  animation-name: animation-step3-data;
+  animation-delay: 0s;
+  background-position: 0 -60px;
+}
+
+.step3-data2 {
+  animation-name: animation-step3-data;
+  animation-delay: 1s;
+  background-position: -30px -60px;
+}
+
+.step3-data3 {
+  animation-name: animation-step3-data;
+  animation-delay: 2s;
+  background-position: -60px -60px;
+}
+
+.step3-data4 {
+  animation-name: animation-step3-data;
+  animation-delay: 3s;
+  background-position: -90px -60px;
+}
+
+.step3-data5 {
+  animation-name: animation-step3-data5;
+  animation-delay: 0s;
+  animation-duration: 8s;
+  background-position: -100px -160px;
+  top: 112px;
+  left: 225px;
+  width: 60px;
+  height: 80px;
+  transform: rotate(-30deg) skew(-20deg);
+  transform-origin: 0 0;
+}
+
+
+.step4-data2 {
+  animation-name: animation-step4-data;
+  animation-delay: 1s;
+  background-position: -30px -60px;
+}
+
+.step4-data22 {
+  animation-name: animation-step4-data0;
+  animation-delay: 1s;
+  background-position: 0 -120px;
+  width: 60px;
+  height: 40px;
+}
+
+.step4-data3 {
+  animation-name: animation-step4-data;
+  animation-delay: 3s;
+  background-position: -60px -60px;
+}
+
+.step4-data4 {
+  animation-name: animation-step4-data;
+  animation-delay: 5s;
+  background-position: -90px -60px;
+}
+
+.step4-data44 {
+  animation-name: animation-step4-data0;
+  animation-delay: 3s;
+  background-position: -60px -120px;
+  width: 60px;
+  height: 40px;
+}
+
+.step4-data5 {
+  animation-name: animation-step4-data5;
+  animation-delay: 3.1s;
+  background-position: -90px -60px;
+}
+
+.step5-data1 {
+  animation-name: animation-step5-data;
+  animation-delay: 0s;
+  background-position: -128px -34px;
+}
+
+.step5-data2 {
+  animation-name: animation-step5-data;
+  animation-delay: 1s;
+  background-position: -128px -34px;
+}
+
+.step5-data3 {
+  animation-name: animation-step5-data;
+  animation-delay: 2s;
+  background-position:-128px -34px;
+}
+
+.step6-data1 {
+  animation-name: animation-step6-data;
+  animation-delay: 0.2s;
+  background-position: -60px 0;
+}
+
+.step6-data2 {
+  animation-name: animation-step6-data2;
+  animation-delay: 1s;
+  background-position: -60px 0;
+}
+
+.step6-data3 {
+  animation-name: animation-step6-data;
+  animation-delay: 3.4s;
+  background-position: -60px 0;
+}
+

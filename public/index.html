@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>文化和旅游大数据中心</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="ui-loading-init">
+        <div class="ui-loading-three"></div>
+        <div class="ui-loading-text">loading</div>
+      </div>
+      <style>
+        html{
+          background:#eff2f7;
+        }
+        .ui-loading-init{
+          position: fixed;
+          left:50%;
+          top:50%;
+          margin:-40px 0 0 -30px;
+          width: 60px;
+          height: 80px;
+          font-size:12px;
+          text-align: center;
+          color:#999;
+        }
+        .ui-loading-init .ui-loading-three {
+          position: relative;
+          margin: 0 auto;
+          width: 60px;
+          height: 60px;
+        }
+
+        .ui-loading-init .ui-loading-three:after,.ui-loading .ui-loading-three:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 60px;
+          height: 60px;
+          opacity: 0;
+          background: #999;
+          border-radius: 50%;
+          -webkit-animation: ui-loading-three 2s infinite ease-in-out;
+          animation: ui-loading-three 2s infinite ease-in-out
+        }
+
+        .ui-loading-init .ui-loading-three:before {
+          -webkit-animation-delay: 1s;
+          animation-delay: 1s
+        }
+        @-webkit-keyframes ui-loading-three {
+          0% {
+            opacity: .6;
+            -webkit-transform: scale(0);
+            transform: scale(0)
+          }
+
+          50% {
+            opacity: .6;
+            -webkit-transform: scale(1);
+            transform: scale(1)
+          }
+
+          100% {
+            opacity: .6;
+            -webkit-transform: scale(0);
+            transform: scale(0)
+          }
+        }
+
+        @keyframes ui-loading-three {
+          0% {
+            opacity: .6;
+            -webkit-transform: scale(0);
+            transform: scale(0)
+          }
+
+          50% {
+            opacity: .6;
+            -webkit-transform: scale(1);
+            transform: scale(1)
+          }
+
+          100% {
+            opacity: .6;
+            -webkit-transform: scale(0);
+            transform: scale(0)
+          }
+        }
+      </style>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="http://filealiyun.geeker.com.cn/ued/BD-echarts/v3.8.4/echarts.min.js"></script>
+    <script src="./lib/jsencrypt.min.js"></script>
+  </body>
+</html>
