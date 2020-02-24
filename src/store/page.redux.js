@@ -14,9 +14,22 @@ const initialState = {
                 {
                     name: '折线图',
                     checked: true,
-                    component: 'ReactLine',
+                    component: 'GeekLine',
                     api: '',
-                    options: {},
+                    config: {}
+                },
+                {
+                    name: '折线图',
+                    checked: true,
+                    component: 'GeekLine',
+                    api: '',
+                    config: {}
+                },
+                {
+                    name: '折线图',
+                    checked: true,
+                    component: 'GeekLine',
+                    api: '',
                     config: {}
                 }
             ]
@@ -24,13 +37,7 @@ const initialState = {
         {
             checked: false,
             name: '第2页',
-            widgets: [
-                {
-                    name: '柱状图',
-                    checked: true,
-                    component: 'ReactLine'
-                }
-            ]
+            widgets: []
         }
     ],
     // 选中页面的下标
@@ -38,6 +45,7 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
+    let pages = state.pages;
     switch (action.type) {
         // 所有页面
         case 'getPages':
@@ -50,6 +58,27 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 checkedPageIndex: action.data
+            }
+        // 复制页面
+        case 'copyPage':
+            pages.splice(state.checkedPageIndex, 0, {
+                ...pages[state.checkedPageIndex],
+                checked: false
+            })
+            return {
+                ...state,
+                pages: [...pages]
+            }
+        // 删除页面
+        case 'deletePage':
+            pages.splice(state.checkedPageIndex, 1);
+            if (pages.length) {
+                pages[0].checked = true
+            }
+            return {
+                ...state,
+                checkedPageIndex: 0,
+                pages: [...pages]
             }
         default:
             return state
@@ -75,5 +104,27 @@ export function getPages (data) {
 export function checkedPageIndex (data) {
     return (dispatch) => {
         dispatch({ type: 'checkedPageIndex', data:data })
+    }
+}
+
+/**
+ * 复制页面
+ * @param data
+ * @returns {Function}
+ */
+export function copyPage () {
+    return (dispatch) => {
+        dispatch({ type: 'copyPage'})
+    }
+}
+
+/**
+ * 删除页面
+ * @param data
+ * @returns {Function}
+ */
+export function deletePage () {
+    return (dispatch) => {
+        dispatch({ type: 'deletePage'})
     }
 }

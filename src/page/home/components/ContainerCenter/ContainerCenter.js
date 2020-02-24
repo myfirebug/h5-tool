@@ -7,6 +7,7 @@
 import React, {Component} from 'react';
 import './index.scss'
 import {connect} from 'react-redux'
+import GeekLine from '@components/widget/geekLine/GeekLine'
 
 @connect(
     // 状态映射
@@ -17,6 +18,7 @@ import {connect} from 'react-redux'
 )
 class ContainerCenter extends Component {
     render() {
+        let widgets = this.props.pages.length ? this.props.pages[this.props.pageIndex || 0] : {}
         return (
             <div className="container-center">
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +52,16 @@ class ContainerCenter extends Component {
                         {this.props.pages.length && this.props.pages[this.props.pageIndex].name}
                         </div>
                     <div className="phone-content">
+                        {
+                            widgets.widgets ?
+                            widgets.widgets.map((item, index) => (
+                                <div key={index} style={{
+                                    display: item.checked ? 'block' : 'none'
+                                }}>
+                                    {item.component === 'GeekLine' && <GeekLine></GeekLine>}
+                                </div>
+                            )) : null
+                        }
                     </div>
                 </div>
             </div>

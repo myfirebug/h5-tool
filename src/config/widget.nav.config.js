@@ -15,7 +15,10 @@ const WIDGETNAV = [
                 type: 'line',
                 name: '折线图',
                 image: 'http://widget.daqsoft.com/widget/widgets-files/20190904215932-1521/1AS6Z33794504//images/thumbnail.png',
-                component: 'PhoneLine'
+                component: 'PhoneLine',
+                api: '',
+                mock: {},
+                config: {}
             }
         ]
     },
@@ -28,7 +31,10 @@ const WIDGETNAV = [
                 type: 'table',
                 name: '表格',
                 image: 'http://widget.daqsoft.com/widget/widgets-files/20190904215932-1521/1AS6Z33794504//images/thumbnail.png',
-                component: 'PhoneLine'
+                component: 'PhoneLine',
+                api: '',
+                mock: {},
+                config: {}
             }
         ]
     },
@@ -41,7 +47,10 @@ const WIDGETNAV = [
                 type: 'blocks',
                 name: '区域',
                 image: 'http://widget.daqsoft.com/widget/widgets-files/20190904215932-1521/1AS6Z33794504//images/thumbnail.png',
-                component: 'PhoneLine'
+                component: 'PhoneLine',
+                api: '',
+                mock: {},
+                config: {}
             }
         ]
     }
