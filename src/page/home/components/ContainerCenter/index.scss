@@ -1,0 +1,33 @@
+.phone{
+  &-wrapper{
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-337px 0 0 -187px;
+    width: 375px;
+    height: 674px;
+    background:url("../../../../assets/images/phone.png") center center no-repeat;
+  }
+  &-header{
+    margin-top:70px;
+    height: 40px;
+    padding:0 90px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    color:#fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &-content{
+    margin:4px 24px 0 29px;
+    height: 505px;
+    background: #f8f8f8;
+    border:1px solid #ddd;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

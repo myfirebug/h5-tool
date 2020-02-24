@@ -8,6 +8,7 @@ import App from './App'
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
 import { ConfigProvider } from 'antd'
 import '@assets/scss/reset.scss'
+import './index.scss'
 
 let persistor = persistStore(store)
 

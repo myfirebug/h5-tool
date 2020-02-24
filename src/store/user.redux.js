@@ -4,8 +4,6 @@
  * @Last Modified by:   hejp
  * @Last Modified time: 16:26
  */
-import Ajax from '@service';
-import {message} from 'antd';
 const initialState = {
     // 是否跳转到登录
     isLogin: false,

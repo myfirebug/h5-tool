@@ -1,19 +1,26 @@
-// 表单模块
-.form-wrapper{
-  .ant-form-item{
-    display: flex;
-  }
-  .ant-form-item-control-wrapper{
-    flex:1;
-    padding-right: 10px;
-  }
-}
-.container{
-  min-height: 100%;
-}
-.api-form{
-  .ant-form-item-label{
-    width: 120px;
+/*右边菜单*/
+.right-click-menu {
+  display: block;
+  position: fixed;
+  left: 300px;
+  top: 300px;
+  z-index: 101;
+  width: 120px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+  &-item {
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: all .25s ease 0s;
+    &:hover {
+      background: #f5f5f5;
+    }
+    &:last-child {
+      border: none;
+    }
   }
 }
 

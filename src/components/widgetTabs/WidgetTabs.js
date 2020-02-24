@@ -6,7 +6,6 @@
  */
 import React, {Component} from 'react';
 import widgetNav from '@config/widget.nav.config.js'
-import {CSSTransition} from 'react-transition-group'
 import './index.scss'
 
 class WidgetTabs extends Component {

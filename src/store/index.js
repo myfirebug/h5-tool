@@ -4,7 +4,12 @@ import {persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
+// 用户模块
 import user from './user.redux'
+// 页面模块
+import page from './page.redux'
+// 主题模块
+import scheme from './scheme.redux'
 let NODE_ENV = process.env.NODE_ENV,
     applyMiddlewareArray = NODE_ENV === 'development'
         ? applyMiddleware(logger, thunk)
@@ -18,11 +23,13 @@ const persistConfig = {
     // 某个reducer,不持久化
     // blacklist: ['counter'],
     // 需要持久化的模块
-    whitelist: ['user']
+    // whitelist: ['user']
 };
 
 const persistedReducer = persistReducer(persistConfig, combineReducers({
-    user
+    user,
+    page,
+    scheme
 }));
 
 export default createStore(persistedReducer, applyMiddlewareArray);

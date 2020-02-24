@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
-import PrivateRoute from '../components/PrivateRoute';
+// import PrivateRoute from '../components/PrivateRoute';
 // 路由缓存组件
 import LoadableComponent from '@components/LoadableComponent';
 // 首页

@@ -49,10 +49,11 @@
     right: 0;
     bottom:0;
     top:60px;
+    z-index: 101;
     background:rgba(0,0,0,.1);
     .mask{
+      display: block!important;
       position: absolute;
-      z-index: -1;
       width: 100%;
       height: 100%;
     }
