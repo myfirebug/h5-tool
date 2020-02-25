@@ -7,7 +7,8 @@
 import React, {Component} from 'react';
 import {
     Tabs,
-    Icon
+    Icon,
+    Tooltip
 } from 'antd';
 import './index.scss'
 import {connect} from 'react-redux'
@@ -33,17 +34,41 @@ class ContainerLeft extends Component {
     changeShowWidget = (index) => {
         let pages = this.props.pages,
             pageIndex = this.props.pageIndex,
-            datas = pages.length ? pages[pageIndex || 0] : {};
-        if (datas.widgets) {
-            for (let i = 0, len = datas.widgets.length; i < len; i++) {
-                if (index === i) {
-                    datas.widgets[i].checked = !datas.widgets[i].checked
-                }
+            widgets = pages[pageIndex].widgets;
+        widgets[index].show = !widgets[index].show
+        this.props.getPages(pages);
+    }
+    /**
+     * 删除页面某个组件
+     * @param index
+     */
+    deletePageWidget = (index) => {
+        let pages = this.props.pages,
+            pageIndex = this.props.pageIndex,
+            widgets = pages[pageIndex].widgets;
+        widgets.splice(index, 1);
+        this.props.getPages(pages);
+    }
+    /**
+     *显示配置弹窗
+     * @param index
+     * @param item
+     */
+    showSetting = (index, item) => {
+        let pages = this.props.pages,
+            pageIndex = this.props.pageIndex,
+            widgets = pages[pageIndex].widgets;
+        for (let i = 0, len = widgets.length; i < len; i++) {
+            if (index === i) {
+                widgets[i].checked = true
+            } else {
+                widgets[i].checked = false
             }
         }
 
         this.props.getPages(pages);
     }
+
     render() {
         let datas = this.props.pages.length ? this.props.pages[this.props.pageIndex || 0] : {}
         return (
@@ -57,15 +82,29 @@ class ContainerLeft extends Component {
                             {
                                 datas && datas.widgets ?
                                     datas.widgets.map((item, index) => (
-                                        <li className="components-item" key={index}>
+                                        <li className={`components-item ${item.checked ? 'active' : ''}`} key={index}>
                                             <div className="eyes" onClick={() => this.changeShowWidget(index)}>
                                                 {
-                                                    item.checked ?
-                                                        <Icon type="eye"/> : <Icon type="eye-invisible"/>
+                                                    item.show ?
+                                                        <Tooltip title="隐藏">
+                                                            <Icon type="eye"/>
+                                                        </Tooltip> :
+                                                        <Tooltip title="显示">
+                                                            <Icon type="eye-invisible"/>
+                                                        </Tooltip>
                                                 }
                                             </div>
                                             <p className="title">{item.name}</p>
-                                            <Icon type="close-circle" />
+                                            <Tooltip title="关闭">
+                                                <Icon type="close-circle" onClick={() => this.deletePageWidget(index)}/>
+                                            </Tooltip>
+                                            <Tooltip title="设置" placement="topRight">
+                                                <Icon type="setting"
+                                                      onClick={() => this.showSetting(index, item)}
+                                                      style={{
+                                                          marginLeft: 10
+                                                      }}/>
+                                            </Tooltip>
                                         </li>
                                     )) : null
                             }

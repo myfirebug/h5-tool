@@ -1,0 +1,40 @@
+.widget-frame{
+  padding: 10px 0;
+  &-header{
+    padding:0 16px;
+    .title{
+      font-weight: bold;
+      font-size:15px;
+    }
+    // 选项卡
+    .tabs{
+      margin: 15px 0;
+      height: 30px;
+      font-size:13px;
+      line-height: 30px;
+      text-align: center;
+      span{
+        display: inline-block;
+        padding:0 10px;
+        margin-left: -1px;
+        border:1px solid #1d7ae4;
+        color:#1d7ae4;
+        cursor: pointer;
+        transition: all .25s ease 0s;
+        &.active,
+        &:active{
+          background:#1d7ae4;
+          color:#fff;
+        }
+        &:first-child{
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+        }
+        &:last-child{
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+      }
+    }
+  }
+}

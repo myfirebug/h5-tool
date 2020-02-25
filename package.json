@@ -10,7 +10,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "set PORT=1000 && react-app-rewired start",
+    "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"

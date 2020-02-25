@@ -54,11 +54,14 @@
     .mask{
       display: block!important;
       position: absolute;
+      z-index: -1;
       width: 100%;
       height: 100%;
     }
   }
   &-tabpane{
+    position: relative;
+    z-index: 1;
     width: 1200px;
     margin:0 auto;
     background:#fff;
@@ -71,6 +74,7 @@
   .widget-nav-item{
     float: left;
     width: 120px;
+    cursor: pointer;
     .photo{
       width: 120px;
       height: 80px;

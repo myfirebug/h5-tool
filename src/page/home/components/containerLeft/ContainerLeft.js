@@ -11,7 +11,7 @@ import {
     Input
 } from 'antd'
 import {connect} from 'react-redux'
-import {getPages, checkedPageIndex} from "@store/page.redux";
+import {getPages, checkedPageIndex, copyPage, deletePage} from "@store/page.redux";
 import './index.scss'
 
 @connect(
@@ -22,7 +22,9 @@ import './index.scss'
     }),
     {
         getPages,
-        checkedPageIndex
+        checkedPageIndex,
+        copyPage,
+        deletePage
     }
 )
 class ContainerLeft extends Component {
@@ -101,7 +103,7 @@ class ContainerLeft extends Component {
         let target = e.target,
             value = target.value
         if (!value) {
-            target.value = 123123123
+            target.value = `第${index + 1}页`
         }
         if (this.timmer) {
             clearTimeout(this.timmer);
@@ -111,6 +113,24 @@ class ContainerLeft extends Component {
             pages[index].name = value || `第${index + 1}页`;
             this.props.getPages(pages);
         }, 100)
+    }
+
+    /**
+     * 复制页面
+     */
+    copyPage = () => {
+        // 隐藏菜单
+        this.hidePageMenu();
+        this.props.copyPage();
+    }
+
+    /**
+     * 删除页面
+     */
+    deletePage = () => {
+        // 隐藏菜单
+        this.hidePageMenu();
+        this.props.deletePage();
     }
 
     componentWillUnmount () {
@@ -171,8 +191,12 @@ class ContainerLeft extends Component {
                     left: this.state.pageMenu.left,
                     top: this.state.pageMenu.top
                 }}>
-                    <div className="right-click-menu-item">复制页面</div>
-                    <div className="right-click-menu-item">删除页面</div>
+                    <div
+                    onClick={this.copyPage}
+                    className="right-click-menu-item">复制页面</div>
+                    <div 
+                    onClick={this.deletePage}
+                    className="right-click-menu-item">删除页面</div>
                 </div>
                 <div
                     onClick={this.hidePageMenu}

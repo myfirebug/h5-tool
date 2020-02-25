@@ -7,6 +7,63 @@
     width: 375px;
     height: 674px;
     background:url("../../../../assets/images/phone.png") center center no-repeat;
+    .box{
+      position: relative;
+      .resize-wrap{
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        z-index: 9999999999;
+        border: 1px dashed #1d7ae4;
+        background: rgba(0,0,0,.1);
+        box-sizing: border-box;
+        span{
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          background: #fff;
+          border:1px solid #1d7ae4;
+        }
+        .tl{
+          left:-1px;
+          top:-1px;
+        }
+        .tc{
+          left:50%;
+          top:-1px;
+          margin-left: -3px;
+        }
+        .tr{
+          top:-1px;
+          right:-1px;
+        }
+        .bl{
+          bottom:-1px;
+          left:-1px;
+        }
+        .bc{
+          left:50%;
+          bottom:-1px;
+          margin-left: -3px;
+        }
+        .br{
+          bottom:-1px;
+          right:-1px;
+        }
+        .cl{
+          left:-1px;
+          top:50%;
+          margin-top:-3px;
+        }
+        .cr{
+          right:-1px;
+          top:50%;
+          margin-top:-3px;
+        }
+      }
+    }
   }
   &-header{
     margin-top:70px;
@@ -27,7 +84,6 @@
     border:1px solid #ddd;
     box-sizing: border-box;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    overflow-y: auto;
   }
 }

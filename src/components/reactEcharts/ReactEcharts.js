@@ -186,7 +186,7 @@ ReactEcharts.propTypes = {
     tooltip: PropTypes.object
 };
 ReactEcharts.defaultProps = {
-    style: {height: '400px'},
+    style: {height: '300px'},
     className: '',
     tooltip: {
         show: true,

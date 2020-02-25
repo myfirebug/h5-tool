@@ -7,6 +7,10 @@
 import React, {Component} from 'react';
 import './index.scss'
 import {connect} from 'react-redux'
+// 路由缓存组件
+import LoadableComponent from '@components/LoadableComponent';
+
+const GeekLine = LoadableComponent(() => import('@components/widget/geekLine/GeekLine'));
 
 @connect(
     // 状态映射
@@ -16,7 +20,16 @@ import {connect} from 'react-redux'
     })
 )
 class ContainerCenter extends Component {
+
+    componentDidMount() {
+        document.addEventListener('click', function(event) {
+            let e = event || window.event,
+                target = e.target;
+            console.log(document.getElementById('container').contains(target));
+        })
+    }
     render() {
+        let widgets = this.props.pages.length ? this.props.pages[this.props.pageIndex || 0] : {}
         return (
             <div className="container-center">
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +61,29 @@ class ContainerCenter extends Component {
                 <div className="phone-wrapper">
                     <div className="phone-header">
                         {this.props.pages.length && this.props.pages[this.props.pageIndex].name}
-                        </div>
-                    <div className="phone-content">
+                    </div>
+                    <div className="phone-content" ref="container" id="container">
+                        {
+                            widgets.widgets ?
+                                widgets.widgets.map((item, index) => (
+                                    <div className="box" key={index}>
+                                        {
+                                            item.checked ?
+                                                <div className="resize-wrap">
+                                                    <span className="tl"></span>
+                                                    <span className="tr"></span>
+                                                    <span className="tc"></span>
+                                                    <span className="bl"></span>
+                                                    <span className="br"></span>
+                                                    <span className="bc"></span>
+                                                    <span className="cl"></span>
+                                                    <span className="cr"></span>
+                                                </div> : null
+                                        }
+                                        {item.show && item.component === 'GeekLine' && <GeekLine></GeekLine>}
+                                    </div>
+                                )) : null
+                        }
                     </div>
                 </div>
             </div>

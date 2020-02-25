@@ -5,15 +5,29 @@
  * @Last Modified time: 11:35
  */
 import React, {Component} from 'react';
-import widgetNav from '@config/widget.nav.config.js'
+import {connect} from 'react-redux'
+import {getPages} from "@store/page.redux";
+import {cloneDeep} from '@util'
+import {getWidgets}  from "@store/widgets.redux";
 import './index.scss'
 
+
+@connect(
+    // 状态映射
+    state => ({
+        pages: state.page.pages,
+        pageIndex: state.page.checkedPageIndex,
+        nav: state.nav.list
+    }),
+    {
+        getPages,
+        getWidgets
+    }
+)
 class WidgetTabs extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // 所有菜单数据
-            widgetNav: widgetNav,
             // 选中的菜单
             active: undefined
         }
@@ -24,7 +38,7 @@ class WidgetTabs extends Component {
      * @param index
      */
     navChangeHandler = (index) => {
-        let widgetNav = this.state.widgetNav;
+        let widgetNav = this.props.nav;
         for (let i = 0, len = widgetNav.length; i < len; i++) {
             if (i === index) {
                 widgetNav[i].checked = true
@@ -32,32 +46,47 @@ class WidgetTabs extends Component {
                 widgetNav[i].checked = false
             }
         }
+        this.props.getWidgets(widgetNav);
         this.setState({
-            widgetNav: widgetNav,
             active: index
         })
     }
-
+    /**
+     * 隐藏菜单
+     */
     hideNavDialogHandler = () => {
-        let widgetNav = this.state.widgetNav;
+        let widgetNav = this.props.nav;
         for (let i = 0, len = widgetNav.length; i < len; i++) {
             widgetNav[i].checked = false
         }
+        this.props.getWidgets(widgetNav);
         this.setState({
-            widgetNav: widgetNav,
             active: undefined
         })
     }
 
+    /**
+     * 添加组件
+     * @param item
+     */
+    addWidget = (item) => {
+        let pages = this.props.pages,
+            pageIndex = this.props.pageIndex,
+            widgets = pages[pageIndex].widgets;
+        widgets.push(cloneDeep(item));
+        this.props.getPages(pages);
+    }
+
     render() {
+        const nav = this.props.nav;
         return (
             <div className="widget-tabs">
                 <div className="widget-tabs-hd">
-                    {this.state.widgetNav.map((item, index) => (
+                    {nav && nav.map((item, index) => (
                         <div
                             className={'widget-tabs-tab ' + (item.checked ? 'widget-tabs-tab-active' : '')}
                             key={index}
-                            onClick={() => this.navChangeHandler(index)}>
+                            onClick={() => this.navChangeHandler(index, item)}>
                             <span className="daq-web" dangerouslySetInnerHTML={{__html: item.icon}}></span>
                             {item.name}
                         </div>
@@ -68,7 +97,7 @@ class WidgetTabs extends Component {
                 }}>
                     <div className="mask" onClick={this.hideNavDialogHandler}></div>
                     {
-                        this.state.widgetNav.map((item, index) => (
+                        nav && nav.map((item, index) => (
                             <div
                                 className="widget-tabs-tabpane"
                                 key={index}
@@ -77,8 +106,9 @@ class WidgetTabs extends Component {
                                 }}>
                                 <ul className="widget-nav-list">
                                     {
-                                        item.data.map((a, b) => (
+                                        item.data && item.data.map((a, b) => (
                                             <li
+                                                onClick={() => this.addWidget(a)}
                                                 className="widget-nav-item"
                                                 key={b}>
                                                 <div className="photo">

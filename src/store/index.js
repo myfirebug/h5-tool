@@ -10,6 +10,9 @@ import user from './user.redux'
 import page from './page.redux'
 // 主题模块
 import scheme from './scheme.redux'
+// 菜单模块
+import nav from './widgets.redux'
+
 let NODE_ENV = process.env.NODE_ENV,
     applyMiddlewareArray = NODE_ENV === 'development'
         ? applyMiddleware(logger, thunk)
@@ -29,7 +32,8 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, combineReducers({
     user,
     page,
-    scheme
+    scheme,
+    nav
 }));
 
 export default createStore(persistedReducer, applyMiddlewareArray);

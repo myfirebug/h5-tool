@@ -39,6 +39,12 @@
         white-space: nowrap;
         text-overflow: ellipsis;
       }
+      &.active{
+        color:#1d7ae4;
+        .anticon{
+          color:#1d7ae4;
+        }
+      }
     }
   }
 }
