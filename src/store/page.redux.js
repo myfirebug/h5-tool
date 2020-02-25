@@ -16,7 +16,7 @@ const initialState = {
                     checked: true,
                     component: 'ReactLine',
                     api: '',
-                    options: {},
+                    mook: {},
                     config: {}
                 }
             ]
